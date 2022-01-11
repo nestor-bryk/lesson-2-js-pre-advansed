@@ -1,0 +1,327 @@
+@import 'base/_reset';
+@import 'base/_mixins';
+@import 'base/_variables';
+
+// header
+body{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+header{
+    @include box (1440px, 700px);
+    background:  url('@img/header/Background.png');
+    margin: 0 auto;
+}
+
+.container{
+    @include box (940px, auto);
+    margin: 0 auto;
+}
+
+.header_content{
+    display: flex;
+    justify-content: space-between;
+    .header_logo{
+        padding-top: 48px ;
+        .logo{
+            @include font (20px, 700);
+            text-transform: uppercase;
+            color: $main-color;
+            letter-spacing: 1px;
+        }
+    }
+    
+}
+.header_buttons{
+    padding: 40px 41px 0 0;
+    .btn-header{
+        @include font (14px, 400);
+        padding: 10px 17px;
+        background: none;
+        color: $main-color;
+        text-decoration: none;
+        cursor: pointer;
+        border: 2px rgba(255, 255, 255, 0) solid;
+        border-radius: 40px;
+        word-spacing: 4px;
+    }
+}
+
+.btn-header:hover{
+    border: 2px $main-color solid;
+    border-radius: 40px;
+}
+
+.box_header{
+    @include box (470px, 250px);
+    margin: 153px auto 0;
+    text-align: center;
+    color: $main-color;
+    font-weight: 700;
+    .header_title{
+        @include font (52px, 500);
+        line-height: 63px;
+        letter-spacing: 2px;
+    }
+    .header_subtitle{
+        @include font (24px, 300);
+        margin: 30px 0 33px 0;
+    }
+    .box_header_button{
+        @include box (225px, auto);
+        background: #FF4E50;
+        @include font (14px, 700);
+        color: $main-color;
+        border: none;
+        padding: 12px 18.5px 11px 19.5px;
+        border-radius: 40px;
+        cursor: pointer;
+
+    }
+    .box_header_button:hover{
+        background-color: #fc2a2e;
+    }
+}
+
+
+
+
+
+/* WORKS*/
+
+.section_title{
+    @include font (26px, 700);
+    text-align: center;
+    margin: 93px 0 35px;
+    letter-spacing: 2px;
+    color: $second-color;
+}
+
+.box_works{
+    display: flex;
+    justify-content: space-between;
+    .works_card{
+        @include box (300px, 400px);
+        background: url('@img/works/Step1.png');
+        padding: 0 25px 21px;
+        display: grid;
+        align-content: end;
+        .card_step{
+            @include box (70px, #FF4E50);
+            background: #FF4E50;
+            @include font (10px, 400);
+            text-align: center;
+            padding: 5px 0 3px 0;
+            border-radius: 40px;
+            color: $main-color;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+        }
+        .card_title{
+            @include font (24px, 700);
+            color: $main-color;
+            margin: 25px 0;
+
+        }
+        .card_subtitle{
+            @include font (14px, 300);
+            color: $main-color;
+        }
+    }
+    .works_card_second{
+        @extend .works_card;
+        background-image: url('@img/works/Step2.png');
+    }
+
+    .works_card_three{
+        @extend .works_card;
+        background-image: url('@img/works/Step3.png');
+    }
+}
+
+/* PARTNER */
+
+.box_partner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .card_partner{
+        text-align: center;
+        width: 25%;
+        .card_partner-photo{
+            position: relative;
+            .foto-partner{
+                @include box (120px, 120px);
+                border-radius: 50%;
+            }
+            .card_partner-icon{
+                display: grid;
+
+                border-radius: 50%;
+                border: 4px solid $main-color;
+
+                position: absolute;
+                bottom: 0;
+                right: 55px;
+                .icon-partner{
+                    padding: 8px;
+                }
+            }    
+        }
+    }
+}
+
+.card_partner-name{
+    @include font (14px, 700);
+    color: $second-color;
+
+    margin: 21px 0;
+}
+.card-partner-info{
+    @include font (14px, 300);
+    padding: 0 10px;
+    color: #666;
+}
+
+.bg_music{
+    @extend .card_partner-icon;
+    background-color: #FF4E50;
+}
+
+.bg_brush{
+    @extend .card_partner-icon;
+    background-color: #19D4CA;
+}
+
+.bg_camera{
+    @extend .card_partner-icon;
+    background-color: #FFA710;
+}
+
+.bg_plane{
+    @extend .card_partner-icon;
+    background-color: #667DF3;
+}
+
+.button_partner{
+    @include box (180px, $main-color);
+    @include font (14px, 700);
+    margin: 36px auto 0;
+    color: red;
+    border: 2px solid red;
+    padding: 12px 18.5px 11px 19.5px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+/* COLLAGE */
+
+.box_collage{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+
+    height: 970px;
+    .picture_collage{
+        display: flex;
+        justify-content: center;
+    
+        position: relative;
+        .img_collage{
+            border-radius: 4px;
+        }
+        .text_collage{
+            @include font (22px, 700);
+            position: absolute;
+            top: 45%;
+            color: $main-color;
+            text-align: center;
+        }
+    }
+}
+
+/* SEARCH */
+
+.search_subtitle{
+    @include font (18px, 300);
+    text-align: center;
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+.search_box{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    .input_search{
+        width: 300px;
+        padding: 14px 0 10px 15px;
+        margin-right: 10px;
+
+             ;
+        border: 1px solid #D4D4D4;
+    }
+    .input_search:focus{
+        outline: 2px solid#FF4E50;   
+    }
+    .search_button{
+        @include font (14px, 500);
+        padding: 12px 25px 11px 30px;
+        background-color: #FF4E50;
+        border: none;
+        border-radius: 40px;
+        color: $main-color;
+        cursor: pointer;
+    }
+
+}
+
+
+
+
+
+
+
+// footer
+.footer{
+    @include box (940px, auto);
+    border-top: 2px solid #FF4E50;
+    margin: 0 auto;
+}
+
+.box_footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 0;
+    .footer_logo{
+        @include font (16px, 400);
+        color: #FF4E50;
+    }
+}
+
+.head_list{
+    @include font (14px, 700);
+    color: $second-color;
+}
+
+.item_list{
+    @include font (14px, 300);
+    color: #999999;
+    margin-top: 11px;
+}
+
+.footer_section{
+    @include font (14px, 700);
+    color: $second-color;
+}
+
+.footer_partners{
+    @include font (10px, 700);
+    color: #999999;
+    text-transform: uppercase;
+    text-align: end;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,9 @@
+@mixin box ($w, $h){
+    width: $w;
+    height: $h;
+}
+
+@mixin font ($fs, $fw,){
+    font-size: $fs;
+    font-weight: $fw;
+}
